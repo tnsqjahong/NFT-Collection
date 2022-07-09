@@ -231,9 +231,9 @@ export default function Home() {
 
     // If user is not connected to the Rinkeby network, let them know and throw an error
     const { chainId } = await web3Provider.getNetwork();
-    if (chainId !== 5) {
-      window.alert("Change the network to GOERLI");
-      throw new Error("Change network to GOERLI");
+    if (chainId !== 4) {
+      window.alert("Change the network to RINKEBY");
+      throw new Error("Change network to RINKEBY");
     }
 
     if (needSigner) {
@@ -252,7 +252,7 @@ export default function Home() {
       // Assign the Web3Modal class to the reference object by setting it's `current` value
       // The `current` value is persisted throughout as long as this page is open
       web3ModalRef.current = new Web3Modal({
-        network: "goerli",
+        network: "rinkeby",
         providerOptions: {},
         disableInjectedProvider: false,
       });
